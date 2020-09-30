@@ -1,0 +1,22 @@
+<h2 mat-dialog-title>Edit Details</h2>
+<mat-form-field>
+  <input matInput placeholder="Name" [(ngModel)]="data.name" />
+</mat-form-field>
+<br />
+<mat-form-field>
+  <input matInput placeholder="City" [(ngModel)]="data.city" />
+</mat-form-field>
+<mat-dialog-content>
+  <p>Would You Like to Save?</p>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button
+    mat-raised-button
+    [mat-dialog-close]="{ name: data.name, city: data.city }"
+    cdkFocusInitial
+  >
+    Save
+  </button>
+</mat-dialog-actions>
